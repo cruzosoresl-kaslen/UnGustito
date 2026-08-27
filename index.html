@@ -41,22 +41,17 @@
     margin:0;
     line-height:1.05;
   }
-  .script{
-    font-family:'Caveat', cursive;
-    font-weight:700;
-  }
+  .script{ font-family:'Caveat', cursive; font-weight:700; }
   a{ color:inherit; }
   img{ max-width:100%; display:block; }
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 24px;
-  }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
   ::selection{ background:var(--accent); color:#fff; }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
   }
+
+  .icon-chat{ display:inline-block; vertical-align:-3px; }
 
   /* ---------- Header ---------- */
   .site-header{
@@ -72,8 +67,7 @@
   .logo{
     display:flex; align-items:center; gap:10px;
     font-family:'Baloo 2', sans-serif; font-weight:800;
-    font-size:1.35rem;
-    letter-spacing:-0.02em;
+    font-size:1.35rem; letter-spacing:-0.02em;
   }
   .logo-mark{
     width:38px; height:38px; border-radius:50%;
@@ -86,9 +80,7 @@
   nav.main-nav{ display:flex; gap:28px; }
   nav.main-nav a{
     text-decoration:none; font-weight:600; font-size:0.95rem;
-    color:var(--ink-soft);
-    position:relative;
-    padding-bottom:4px;
+    color:var(--ink-soft); position:relative; padding-bottom:4px;
   }
   nav.main-nav a::after{
     content:''; position:absolute; left:0; right:0; bottom:0; height:2px;
@@ -106,52 +98,29 @@
     transition: transform .15s ease, box-shadow .15s ease, background-color .3s ease, border-color .3s ease;
   }
   .btn:active{ transform:scale(0.97); }
-  .btn-primary{
-    background:var(--accent); color:#fff;
-    box-shadow: var(--shadow);
-  }
+  .btn-primary{ background:var(--accent); color:#fff; box-shadow: var(--shadow); }
   .btn-primary:hover{ background:var(--accent-dark); }
-  .btn-whats{
-    background:#25D366; color:#fff;
-  }
+  .btn-whats{ background:#25D366; color:#fff; }
   .btn-whats:hover{ filter:brightness(0.95); }
-  .btn-ghost{
-    background:transparent; border-color:var(--ink);
-    color:var(--ink);
-  }
+  .btn-ghost{ background:transparent; border-color:var(--ink); color:var(--ink); }
   .btn-ghost:hover{ background:var(--ink); color:var(--paper); }
   .header-cta{ display:flex; align-items:center; gap:14px; }
   .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; }
   .nav-toggle span{ display:block; width:24px; height:2px; background:var(--ink); margin:5px 0; }
 
   /* ---------- Hero ---------- */
-  .hero{
-    padding:64px 0 40px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero-scene{
-    position:absolute; inset:0;
-    pointer-events:none;
-    z-index:0;
-    overflow:hidden;
-  }
+  .hero{ padding:64px 0 40px; position:relative; overflow:hidden; }
+  .hero-scene{ position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
   .hero .wrap{
     position:relative; z-index:1;
     display:grid; grid-template-columns: 1.1fr 0.9fr; gap:48px; align-items:center;
   }
   .scene-item{
-    position:absolute;
-    font-size:2.6rem;
-    line-height:1;
-    opacity:0;
-    transform:scale(0.85);
+    position:absolute; font-size:2.6rem; line-height:1; opacity:0; transform:scale(0.85);
     transition:opacity .5s ease, transform .5s ease;
     filter:drop-shadow(0 6px 10px rgba(36,28,21,0.15));
   }
   .scene-item.is-visible{ opacity:0.9; transform:scale(1); }
-
-  /* posiciones */
   .item-fries{ top:8%; right:6%; font-size:3.1rem; animation: float-a 3.6s ease-in-out infinite; }
   .item-soda{ bottom:12%; right:20%; font-size:2.6rem; animation: float-b 4.2s ease-in-out infinite; }
   .item-burger{ top:44%; right:2%; font-size:2.3rem; animation: float-a 3.2s ease-in-out infinite .4s; }
@@ -160,119 +129,68 @@
   .item-broccoli{ bottom:14%; right:22%; font-size:2.5rem; animation: jog 0.8s ease-in-out infinite; }
   .item-sweat{ bottom:26%; right:15%; font-size:1.3rem; animation: float-b 2s ease-in-out infinite; }
   .item-salad{ top:46%; right:4%; font-size:2.4rem; animation: float-a 3.4s ease-in-out infinite .2s; }
-
   .steam{
-    position:absolute; top:2%; right:11%;
-    width:4px; height:16px; border-radius:50%;
-    background:rgba(110,93,76,0.35);
-    opacity:0;
+    position:absolute; top:2%; right:11%; width:4px; height:16px; border-radius:50%;
+    background:rgba(110,93,76,0.35); opacity:0;
   }
   .steam.is-visible{ animation: steam-rise 2.2s ease-in infinite; }
   .steam:nth-child(2){ right:8%; animation-delay:.5s; }
   .steam:nth-child(3){ right:14%; animation-delay:1s; }
-
-  @keyframes float-a{
-    0%,100%{ transform:translateY(0) rotate(-4deg); }
-    50%{ transform:translateY(-14px) rotate(4deg); }
-  }
-  @keyframes float-b{
-    0%,100%{ transform:translateY(0) rotate(3deg); }
-    50%{ transform:translateY(-10px) rotate(-3deg); }
-  }
-  @keyframes squat{
-    0%,100%{ transform:translateY(0) scaleY(1); }
-    50%{ transform:translateY(8px) scaleY(0.88); }
-  }
-  @keyframes lift{
-    0%,100%{ transform:rotate(-18deg); }
-    50%{ transform:rotate(18deg); }
-  }
-  @keyframes jog{
-    0%,100%{ transform:translateX(0) rotate(-8deg); }
-    50%{ transform:translateX(10px) rotate(8deg); }
-  }
-  @keyframes steam-rise{
-    0%{ transform:translateY(0) scaleX(1); opacity:0.5; }
-    100%{ transform:translateY(-22px) scaleX(1.6); opacity:0; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .scene-item, .steam{ animation:none !important; }
-  }
-  @media (max-width:760px){
-    .hero-scene{ display:none; }
-  }
+  @keyframes float-a{ 0%,100%{ transform:translateY(0) rotate(-4deg); } 50%{ transform:translateY(-14px) rotate(4deg); } }
+  @keyframes float-b{ 0%,100%{ transform:translateY(0) rotate(3deg); } 50%{ transform:translateY(-10px) rotate(-3deg); } }
+  @keyframes squat{ 0%,100%{ transform:translateY(0) scaleY(1); } 50%{ transform:translateY(8px) scaleY(0.88); } }
+  @keyframes lift{ 0%,100%{ transform:rotate(-18deg); } 50%{ transform:rotate(18deg); } }
+  @keyframes jog{ 0%,100%{ transform:translateX(0) rotate(-8deg); } 50%{ transform:translateX(10px) rotate(8deg); } }
+  @keyframes steam-rise{ 0%{ transform:translateY(0) scaleX(1); opacity:0.5; } 100%{ transform:translateY(-22px) scaleX(1.6); opacity:0; } }
+  @media (prefers-reduced-motion: reduce){ .scene-item, .steam{ animation:none !important; } }
+  @media (max-width:760px){ .hero-scene{ display:none; } }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
     font-weight:700; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase;
-    color:var(--accent-dark);
-    background:var(--paper-alt);
-    border:1px solid var(--line);
-    padding:6px 14px; border-radius:999px;
-    transition: color .3s ease;
-    margin-bottom:18px;
+    color:var(--accent-dark); background:var(--paper-alt); border:1px solid var(--line);
+    padding:6px 14px; border-radius:999px; transition: color .3s ease; margin-bottom:18px;
   }
-  .hero h1{
-    font-size:clamp(2.6rem, 5.2vw, 4.2rem);
-    letter-spacing:-0.02em;
-  }
+  .hero h1{ font-size:clamp(2.6rem, 5.2vw, 4.2rem); letter-spacing:-0.02em; }
   .hero h1 .accent-word{ color:var(--accent); transition:color .3s ease; }
-  .tagline-swap{
-    position:relative; min-height:2.4em; margin-top:14px;
-  }
+  .tagline-swap{ position:relative; min-height:2.4em; margin-top:14px; }
   .tagline-swap p{
     font-size:1.15rem; color:var(--ink-soft); max-width:46ch; margin:0;
-    position:absolute; inset:0;
-    opacity:0; transform:translateY(6px);
+    position:absolute; inset:0; opacity:0; transform:translateY(6px);
     transition:opacity .35s ease, transform .35s ease;
   }
   .tagline-swap p.is-active{ opacity:1; transform:translateY(0); position:relative; }
   .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
 
-  /* Dial — signature element */
+  /* Dial — elemento distintivo */
   .dial-card{
-    background:var(--card);
-    border-radius:22px;
-    box-shadow:var(--shadow);
-    border:1px solid var(--line);
-    padding:30px 26px 24px;
-    text-align:center;
-    justify-self:center;
-    width:100%; max-width:320px;
+    background:var(--card); border-radius:22px; box-shadow:var(--shadow);
+    border:1px solid var(--line); padding:30px 26px 24px; text-align:center;
+    justify-self:center; width:100%; max-width:320px;
   }
   .dial-card .dial-label{
     font-weight:700; font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase;
     color:var(--ink-soft); margin-bottom:18px;
   }
-  .dial-shell{
-    position:relative;
-    width:180px; height:180px; margin:0 auto;
-  }
+  .dial-shell{ position:relative; width:180px; height:180px; margin:0 auto; }
   .dial{
-    position:relative;
-    width:180px; height:180px;
-    border-radius:50%;
+    position:relative; width:180px; height:180px; border-radius:50%;
     background:
       radial-gradient(circle at 50% 50%, #fff 0 58%, transparent 59%),
       conic-gradient(from -90deg, var(--clasico) 0deg 180deg, var(--fit) 180deg 360deg);
     box-shadow: inset 0 0 0 6px #fff, 0 2px 10px rgba(36,28,21,0.15);
-    cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
+    cursor:pointer; -webkit-tap-highlight-color:transparent;
     transition: transform .2s ease;
   }
   .dial:hover{ transform:scale(1.04); }
   .dial::before{
-    content:'';
-    position:absolute; inset:-8px;
-    border-radius:50%;
-    border:2px solid var(--accent);
-    opacity:0.55;
-    animation: dial-pulse 1.8s ease-out infinite;
-    pointer-events:none;
+    content:''; position:absolute; inset:-8px; border-radius:50%;
+    border:2px solid var(--accent); opacity:0.55;
+    animation: dial-pulse 1.8s ease-out infinite; pointer-events:none;
   }
   @keyframes dial-pulse{
-    0%   { transform:scale(0.86); opacity:0.6; }
-    70%  { transform:scale(1.22); opacity:0; }
-    100% { transform:scale(1.22); opacity:0; }
+    0%{ transform:scale(0.86); opacity:0.6; }
+    70%{ transform:scale(1.22); opacity:0; }
+    100%{ transform:scale(1.22); opacity:0; }
   }
   .dial-poke{
     position:absolute; top:-14px; right:-10px;
@@ -281,18 +199,15 @@
     padding:6px 12px; border-radius:999px;
     box-shadow:0 4px 10px rgba(36,28,21,0.25);
     animation: dial-bounce 1.6s ease-in-out infinite;
-    white-space:nowrap;
-    pointer-events:none;
+    white-space:nowrap; pointer-events:none;
   }
   .dial-poke::after{
-    content:'';
-    position:absolute; bottom:-5px; left:22px;
-    width:10px; height:10px; background:var(--ink);
-    transform:rotate(45deg);
+    content:''; position:absolute; bottom:-5px; left:22px;
+    width:10px; height:10px; background:var(--ink); transform:rotate(45deg);
   }
   @keyframes dial-bounce{
-    0%, 100% { transform:translateY(0) rotate(-3deg); }
-    50%      { transform:translateY(-5px) rotate(2deg); }
+    0%, 100%{ transform:translateY(0) rotate(-3deg); }
+    50%{ transform:translateY(-5px) rotate(2deg); }
   }
   @media (prefers-reduced-motion: reduce){
     .dial::before{ animation:none; opacity:0; }
@@ -300,9 +215,7 @@
   }
   .dial-needle{
     position:absolute; left:50%; top:50%; width:6px; height:70px;
-    background:var(--ink);
-    border-radius:6px;
-    transform-origin:50% 100%;
+    background:var(--ink); border-radius:6px; transform-origin:50% 100%;
     transform: translate(-50%,-100%) rotate(-90deg);
     transition: transform .5s cubic-bezier(.2,.9,.25,1.15);
   }
@@ -322,43 +235,21 @@
 
   /* ---------- Menu sections ---------- */
   .menu-section{
-    padding:56px 0;
-    border-top:1px solid var(--line);
-    transition: opacity .35s ease;
-    position:relative;
-    overflow:hidden;
+    padding:56px 0; border-top:1px solid var(--line);
+    transition: opacity .35s ease; position:relative; overflow:hidden;
   }
   .menu-section > .wrap{ position:relative; z-index:1; }
   .menu-section.is-dimmed{ opacity:0.55; }
-
-  .section-scene{
-    position:absolute; inset:0;
-    pointer-events:none;
-    z-index:0;
-    overflow:hidden;
-  }
+  .section-scene{ position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
   .deco{
-    position:absolute;
-    font-size:4.2rem;
-    opacity:0.16;
-    animation: deco-float 6s ease-in-out infinite;
-    filter:saturate(0.9);
+    position:absolute; font-size:4.2rem; opacity:0.16;
+    animation: deco-float 6s ease-in-out infinite; filter:saturate(0.9);
   }
   .deco-alt{ animation-name: deco-float-alt; }
-  @keyframes deco-float{
-    0%,100%{ transform:translateY(0) rotate(-6deg); }
-    50%{ transform:translateY(-10px) rotate(4deg); }
-  }
-  @keyframes deco-float-alt{
-    0%,100%{ transform:translateY(0) rotate(5deg); }
-    50%{ transform:translateY(10px) rotate(-4deg); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .deco{ animation:none; }
-  }
-  @media (max-width:760px){
-    .section-scene{ display:none; }
-  }
+  @keyframes deco-float{ 0%,100%{ transform:translateY(0) rotate(-6deg); } 50%{ transform:translateY(-10px) rotate(4deg); } }
+  @keyframes deco-float-alt{ 0%,100%{ transform:translateY(0) rotate(5deg); } 50%{ transform:translateY(10px) rotate(-4deg); } }
+  @media (prefers-reduced-motion: reduce){ .deco{ animation:none; } }
+  @media (max-width:760px){ .section-scene{ display:none; } }
   .section-head{
     display:flex; align-items:flex-end; justify-content:space-between; gap:20px;
     margin-bottom:28px; flex-wrap:wrap;
@@ -366,28 +257,18 @@
   .section-head h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); }
   .section-note{
     font-family:'Caveat', cursive; font-size:1.4rem; color:var(--accent-dark);
-    transform:rotate(-2deg); display:inline-block;
-    transition:color .3s ease;
+    transform:rotate(-2deg); display:inline-block; transition:color .3s ease;
   }
-  .menu-grid{
-    display:grid; gap:18px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
+  .menu-grid{ display:grid; gap:18px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
   .dish-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:20px;
-    display:flex; flex-direction:column; gap:8px;
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; display:flex; flex-direction:column; gap:8px;
     transition: transform .2s ease, box-shadow .2s ease, border-color .3s ease;
   }
   .dish-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
   .dish-top{ display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
   .dish-top h3{ font-size:1.05rem; font-family:'Inter'; font-weight:700; }
-  .price{
-    font-family:'Baloo 2'; font-weight:700; color:var(--accent-dark);
-    white-space:nowrap; transition:color .3s ease;
-  }
+  .price{ font-family:'Baloo 2'; font-weight:700; color:var(--accent-dark); white-space:nowrap; transition:color .3s ease; }
   .dish-card p{ margin:0; font-size:0.9rem; color:var(--ink-soft); line-height:1.45; }
   .badge-featured{
     display:inline-block; margin-bottom:4px;
@@ -395,28 +276,37 @@
     color:#fff; background:var(--accent); padding:3px 9px; border-radius:6px; width:fit-content;
     transition:background-color .3s ease;
   }
+  .btn-add{
+    align-self:flex-start; margin-top:4px;
+    background:var(--accent); color:#fff; border:none;
+    padding:8px 18px; border-radius:999px; font-weight:700; font-size:0.82rem;
+    cursor:pointer; transition: transform .15s ease, background-color .3s ease;
+  }
+  .btn-add:hover{ background:var(--accent-dark); }
+  .btn-add:active{ transform:scale(0.94); }
 
   .drinks-groups{ display:grid; gap:26px; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); }
-  .drinks-groups h4{
-    font-family:'Baloo 2'; font-size:1rem; margin-bottom:10px; color:var(--ink);
-  }
+  .drinks-groups h4{ font-family:'Baloo 2'; font-size:1rem; margin-bottom:10px; color:var(--ink); }
   .drinks-groups ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
   .drinks-groups li{
-    display:flex; justify-content:space-between; gap:10px;
+    display:flex; justify-content:space-between; align-items:center; gap:10px;
     font-size:0.92rem; border-bottom:1px dashed var(--line); padding-bottom:8px;
   }
-  .drinks-groups li span:last-child{ font-weight:700; color:var(--accent-dark); transition:color .3s ease; }
+  .drink-line{ display:flex; align-items:center; gap:10px; }
+  .drink-line .price{ font-size:0.92rem; }
+  .btn-add-mini{
+    width:22px; height:22px; border-radius:50%; border:none;
+    background:var(--accent); color:#fff; font-weight:700; font-size:0.95rem;
+    line-height:1; cursor:pointer; transition:background-color .3s ease, transform .15s ease;
+  }
+  .btn-add-mini:hover{ background:var(--accent-dark); }
+  .btn-add-mini:active{ transform:scale(0.9); }
 
   .bg-alt{ background:var(--paper-alt); }
 
   /* ---------- Cómo pedir ---------- */
-  .steps{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:30px;
-  }
-  .step{
-    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
-    padding:26px 22px;
-  }
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:30px; }
+  .step{ background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:26px 22px; }
   .step-num{
     font-family:'Baloo 2'; font-weight:800; font-size:1.6rem; color:var(--accent);
     transition:color .3s ease; margin-bottom:10px; display:block;
@@ -425,50 +315,32 @@
   .step p{ margin:0; color:var(--ink-soft); font-size:0.92rem; }
 
   /* ---------- CTA banda ---------- */
-  .cta-band{
-    background:var(--ink); color:var(--paper);
-    padding:52px 0; text-align:center;
-  }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:52px 0; text-align:center; }
   .cta-band h2{ color:#fff; font-size:clamp(1.7rem,3.4vw,2.4rem); margin-bottom:12px; }
   .cta-band p{ color:#D8CBBB; max-width:52ch; margin:0 auto 26px; }
   .cta-band .btn-primary{ background:var(--mustard); color:var(--ink); }
   .cta-band .btn-primary:hover{ background:#d9a400; }
   .link-reclamos{
-    display:block;
-    margin:18px auto 0;
-    background:none; border:none;
-    color:#fff;
-    font-family:'Inter', sans-serif;
-    font-size:0.85rem;
-    text-decoration:underline;
-    text-underline-offset:3px;
-    cursor:pointer;
-    opacity:0.85;
+    display:block; margin:18px auto 0; background:none; border:none; color:#fff;
+    font-family:'Inter', sans-serif; font-size:0.85rem; text-decoration:underline;
+    text-underline-offset:3px; cursor:pointer; opacity:0.85;
   }
   .link-reclamos:hover{ opacity:1; }
 
   /* ---------- Modal Libro de Reclamaciones ---------- */
   .modal-overlay{
-    position:fixed; inset:0; z-index:200;
-    background:rgba(36,28,21,0.55);
-    display:none; align-items:center; justify-content:center;
-    padding:20px;
+    position:fixed; inset:0; z-index:200; background:rgba(36,28,21,0.55);
+    display:none; align-items:center; justify-content:center; padding:20px;
   }
   .modal-overlay.is-open{ display:flex; }
   .modal-card{
-    background:#fff; color:var(--ink);
-    border-radius:20px;
-    width:100%; max-width:480px;
-    max-height:90vh; overflow-y:auto;
-    padding:30px 26px 26px;
-    position:relative;
+    background:#fff; color:var(--ink); border-radius:20px; width:100%; max-width:480px;
+    max-height:90vh; overflow-y:auto; padding:30px 26px 26px; position:relative;
     box-shadow:0 25px 60px rgba(0,0,0,0.3);
   }
   .modal-close{
-    position:absolute; top:14px; right:14px;
-    width:32px; height:32px; border-radius:50%;
-    background:var(--paper-alt); border:none;
-    font-size:1.2rem; line-height:1; cursor:pointer;
+    position:absolute; top:14px; right:14px; width:32px; height:32px; border-radius:50%;
+    background:var(--paper-alt); border:none; font-size:1.2rem; line-height:1; cursor:pointer;
     color:var(--ink-soft);
   }
   .modal-close:hover{ background:var(--line); }
@@ -478,9 +350,8 @@
   .form-row label{ font-size:0.85rem; font-weight:600; }
   .form-row .opt{ font-weight:400; color:var(--ink-soft); }
   .form-row input, .form-row select, .form-row textarea{
-    border:1px solid var(--line); border-radius:10px;
-    padding:10px 12px; font-family:'Inter', sans-serif; font-size:0.92rem;
-    color:var(--ink); background:var(--paper);
+    border:1px solid var(--line); border-radius:10px; padding:10px 12px;
+    font-family:'Inter', sans-serif; font-size:0.92rem; color:var(--ink); background:var(--paper);
   }
   .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
     outline:2px solid var(--accent); outline-offset:1px;
@@ -490,8 +361,109 @@
   .form-hint{ font-size:0.78rem; color:var(--ink-soft); margin-top:16px; line-height:1.4; }
   .form-actions{ margin-top:18px; }
   .form-actions .btn{ width:100%; justify-content:center; }
+  @media (max-width:480px){ .form-grid-2{ grid-template-columns:1fr; } }
+
+  .reclamo-success{ display:none; text-align:center; padding:6px 0 4px; }
+  .reclamo-success.is-active{ display:block; }
+  .face{ width:96px; height:96px; border-radius:50%; background:var(--mustard); margin:0 auto 16px; position:relative; }
+  .face .eye{ position:absolute; width:8px; height:8px; border-radius:50%; background:var(--ink); top:38px; }
+  .face .eye.left{ left:28px; }
+  .face .eye.right{ right:28px; }
+  .face .mouth{
+    position:absolute; left:50%; top:56px; width:26px; height:13px;
+    border:3px solid var(--ink); border-top:none; border-radius:0 0 20px 20px; transform:translateX(-50%);
+  }
+  .face .tear{
+    position:absolute; width:7px; height:11px; background:#7FB3D5;
+    border-radius:50% 50% 50% 0; transform:rotate(45deg); top:46px; opacity:0;
+  }
+  .reclamo-success.is-active .tear{ animation: tear-fall 1.3s ease-in forwards; }
+  .face .tear.left{ left:24px; animation-delay:.1s; }
+  .face .tear.right{ right:24px; animation-delay:.4s; }
+  @keyframes tear-fall{
+    0%{ opacity:0; transform:translateY(0) rotate(45deg); }
+    15%{ opacity:1; }
+    100%{ opacity:0; transform:translateY(22px) rotate(45deg); }
+  }
+  .face .hand{
+    position:absolute; width:18px; height:18px; border-radius:50%;
+    background:var(--mustard); border:2px solid var(--ink); top:30px; left:14px; opacity:0;
+  }
+  .reclamo-success.is-active .hand{ animation: wipe 1.3s ease-in-out 1; }
+  @keyframes wipe{
+    0%{ transform:translate(0,0) rotate(0deg); opacity:0; }
+    10%{ opacity:1; }
+    35%{ transform:translate(16px,6px) rotate(-15deg); }
+    60%{ transform:translate(30px,0) rotate(10deg); }
+    85%{ transform:translate(46px,6px) rotate(-10deg); }
+    100%{ transform:translate(58px,-2px) rotate(0deg); opacity:0; }
+  }
+  .reclamo-success h4{ font-size:1.15rem; margin-bottom:6px; }
+  .reclamo-success p{ color:var(--ink-soft); font-size:0.9rem; margin:0 0 4px; }
+
+  /* ---------- Ticket flotante (pedido) ---------- */
+  .runner{
+    position:fixed; width:44px; height:44px; border-radius:14px;
+    background:var(--clasico); color:#fff; z-index:300;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Baloo 2'; font-weight:700; font-size:0.72rem;
+    box-shadow:0 6px 14px rgba(0,0,0,0.25); pointer-events:none;
+    transition: left .65s cubic-bezier(.3,.1,.3,1), top .65s cubic-bezier(.3,.1,.3,1), transform .65s ease;
+  }
+  .runner.cat-fit{ background:var(--fit); }
+  .runner.cat-neutral{ background:var(--ink-soft); }
+  .runner::before, .runner::after{
+    content:''; position:absolute; bottom:-8px; width:6px; height:12px;
+    background:inherit; border-radius:3px; animation: run-legs .22s linear infinite alternate;
+  }
+  .runner::before{ left:9px; }
+  .runner::after{ left:26px; animation-delay:.11s; }
+  @keyframes run-legs{ 0%{ transform:rotate(-30deg); } 100%{ transform:rotate(30deg); } }
+
+  .ticket-toggle{
+    position:fixed; right:20px; bottom:20px; z-index:250;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--ink); color:#fff; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+  .ticket-toggle.bounce{ animation: ticket-bounce .4s ease; }
+  @keyframes ticket-bounce{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.22); } }
+  .ticket-count{
+    position:absolute; top:-4px; right:-4px; background:var(--accent); color:#fff;
+    font-size:0.7rem; font-weight:700; width:20px; height:20px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ticket-count[hidden]{ display:none; }
+  .ticket-panel{
+    position:fixed; right:20px; bottom:86px; z-index:250;
+    width:300px; max-width:calc(100vw - 40px); max-height:65vh; overflow-y:auto;
+    background:#fff; border-radius:18px; box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    padding:18px 18px 16px;
+  }
+  .ticket-panel[hidden]{ display:none; }
+  .ticket-panel-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .ticket-panel-head h3{ font-size:1.05rem; }
+  .ticket-close{ background:none; border:none; font-size:1.2rem; cursor:pointer; color:var(--ink-soft); }
+  .ticket-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; max-height:220px; overflow-y:auto; }
+  .ticket-item{ display:flex; justify-content:space-between; gap:10px; font-size:0.88rem; font-weight:700; }
+  .ticket-item.cat-grasa{ color:var(--clasico-dark); }
+  .ticket-item.cat-fit{ color:var(--fit-dark); }
+  .ticket-item.cat-neutral{ color:var(--ink); }
+  .ticket-empty{ font-size:0.82rem; color:var(--ink-soft); margin:6px 0 0; }
+  .ticket-footer{
+    display:flex; justify-content:space-between; align-items:center; margin:14px 0 12px;
+    padding-top:10px; border-top:1px dashed var(--line); font-family:'Baloo 2'; font-weight:700;
+  }
+  .ticket-total{ color:var(--accent-dark); font-size:1.1rem; }
+  .ticket-send{ width:100%; justify-content:center; font-size:0.88rem; padding:10px; }
+  .ticket-clear{
+    display:block; margin:8px auto 0; background:none; border:none;
+    color:var(--ink-soft); font-size:0.78rem; text-decoration:underline; cursor:pointer;
+  }
   @media (max-width:480px){
-    .form-grid-2{ grid-template-columns:1fr; }
+    .ticket-panel{ right:10px; bottom:80px; }
+    .ticket-toggle{ right:10px; }
   }
 
   /* ---------- Footer ---------- */
@@ -508,15 +480,6 @@
     font-size:0.82rem; color:var(--ink-soft);
   }
 
-  /* Floating WhatsApp */
-  .float-whats{
-    position:fixed; right:20px; bottom:20px; z-index:60;
-    width:56px; height:56px; border-radius:50%;
-    background:#25D366; color:#fff;
-    display:flex; align-items:center; justify-content:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.25);
-    font-size:1.5rem; text-decoration:none;
-  }
 
   @media (max-width:900px){
     .hero .wrap{ grid-template-columns:1fr; }
@@ -528,8 +491,7 @@
     nav.main-nav{
       position:absolute; top:100%; left:0; right:0;
       background:var(--paper); border-bottom:1px solid var(--line);
-      flex-direction:column; padding:16px 24px; gap:16px;
-      display:none;
+      flex-direction:column; padding:16px 24px; gap:16px; display:none;
     }
     nav.main-nav.is-open{ display:flex; }
     .nav-toggle{ display:block; }
@@ -553,7 +515,10 @@
     </nav>
     <div class="header-cta">
       <a href="#pedir" class="btn btn-ghost">Cómo pedir</a>
-      <a href="https://wa.me/51903202245" class="btn btn-whats" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      <a href="https://wa.me/51903202245" class="btn btn-whats" target="_blank" rel="noopener">
+        <svg class="icon-chat" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        Pedir por WhatsApp
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -565,7 +530,6 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-scene" id="heroScene">
-      <!-- Escena modo clásico -->
       <span class="scene-item item-fries" data-scene="clasico">🍟</span>
       <span class="steam" data-scene="clasico"></span>
       <span class="steam" data-scene="clasico"></span>
@@ -573,7 +537,6 @@
       <span class="scene-item item-soda" data-scene="clasico">🥤</span>
       <span class="scene-item item-burger" data-scene="clasico">🍔</span>
 
-      <!-- Escena modo fit -->
       <span class="scene-item item-carrot" data-scene="fit">🥕</span>
       <span class="scene-item item-dumbbell" data-scene="fit">🏋️</span>
       <span class="scene-item item-broccoli" data-scene="fit">🥦</span>
@@ -590,7 +553,10 @@
         </div>
         <div class="hero-actions">
           <a href="#menu" class="btn btn-primary">Ver el menú completo</a>
-          <a href="https://wa.me/51903202245" class="btn btn-whats" target="_blank" rel="noopener">💬 Pedir ahora</a>
+          <a href="https://wa.me/51903202245" class="btn btn-whats" target="_blank" rel="noopener">
+            <svg class="icon-chat" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Pedir ahora
+          </a>
         </div>
       </div>
 
@@ -601,7 +567,7 @@
             <div class="dial-needle"></div>
             <div class="dial-center"></div>
           </div>
-          <span class="dial-poke">👆 Tócame</span>
+          <span class="dial-poke">Toca aquí</span>
         </div>
         <div class="dial-tags">
           <span class="tag-clasico">Clásico</span>
@@ -626,7 +592,7 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🍗 Broaster</h2>
+        <h2>Broaster</h2>
         <span class="section-note">crocante por fuera, jugoso por dentro</span>
       </div>
       <div class="menu-grid">
@@ -634,18 +600,22 @@
           <span class="badge-featured">Más pedido</span>
           <div class="dish-top"><h3>Broaster clásico (2 piezas)</h3><span class="price">S/ 15</span></div>
           <p>Con papas fritas, ensalada criolla y cremas de la casa.</p>
+          <button type="button" class="btn-add" data-name="Broaster clásico (2 piezas)" data-price="15" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Broaster familiar (8 piezas)</h3><span class="price">S/ 48</span></div>
           <p>Para compartir, con arroz, papas y ensalada para 4 personas.</p>
+          <button type="button" class="btn-add" data-name="Broaster familiar (8 piezas)" data-price="48" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Alitas broaster (10 unid.)</h3><span class="price">S/ 20</span></div>
           <p>Bañadas en salsa BBQ, picante o miel-mostaza, a elección.</p>
+          <button type="button" class="btn-add" data-name="Alitas broaster (10 unid.)" data-price="20" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Broaster + gaseosa personal</h3><span class="price">S/ 18</span></div>
           <p>Combo individual: 2 piezas, papas y tu gaseosa favorita.</p>
+          <button type="button" class="btn-add" data-name="Broaster + gaseosa personal" data-price="18" data-cat="grasa">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -665,26 +635,30 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🍔 Hamburguesas</h2>
+        <h2>Hamburguesas</h2>
         <span class="section-note">pan tostado, carne a la plancha</span>
       </div>
       <div class="menu-grid">
         <div class="dish-card">
           <div class="dish-top"><h3>Clásica</h3><span class="price">S/ 12</span></div>
           <p>Carne, queso, lechuga, tomate y nuestra salsa de la casa.</p>
+          <button type="button" class="btn-add" data-name="Hamburguesa clásica" data-price="12" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <span class="badge-featured">Doble</span>
           <div class="dish-top"><h3>Doble carne y doble queso</h3><span class="price">S/ 18</span></div>
           <p>Para los que sí quieren gustito completo.</p>
+          <button type="button" class="btn-add" data-name="Hamburguesa doble carne y doble queso" data-price="18" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>BBQ</h3><span class="price">S/ 16</span></div>
           <p>Con cebolla caramelizada, tocino y salsa BBQ.</p>
+          <button type="button" class="btn-add" data-name="Hamburguesa BBQ" data-price="16" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>De pollo apanado</h3><span class="price">S/ 14</span></div>
           <p>Pechuga crocante, palta y mayonesa de ají amarillo.</p>
+          <button type="button" class="btn-add" data-name="Hamburguesa de pollo apanado" data-price="14" data-cat="grasa">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -704,25 +678,29 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🥖 Sanguches</h2>
+        <h2>Sanguches</h2>
         <span class="section-note">de toda la vida</span>
       </div>
       <div class="menu-grid">
         <div class="dish-card">
           <div class="dish-top"><h3>Pollo a la brasa</h3><span class="price">S/ 10</span></div>
           <p>Con lechuga, tomate y mayonesa casera.</p>
+          <button type="button" class="btn-add" data-name="Sanguche de pollo a la brasa" data-price="10" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Chicharrón</h3><span class="price">S/ 12</span></div>
           <p>Con camote frito, salsa criolla y cancha.</p>
+          <button type="button" class="btn-add" data-name="Sanguche de chicharrón" data-price="12" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Lomo saltado</h3><span class="price">S/ 13</span></div>
           <p>Trozos de lomo salteados, papitas y cebolla.</p>
+          <button type="button" class="btn-add" data-name="Sanguche de lomo saltado" data-price="13" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Jamón y queso</h3><span class="price">S/ 8</span></div>
           <p>Sencillo y directo, para llevar rapidito.</p>
+          <button type="button" class="btn-add" data-name="Sanguche de jamón y queso" data-price="8" data-cat="grasa">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -742,26 +720,30 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🍟 Salchipapas</h2>
+        <h2>Salchipapas</h2>
         <span class="section-note">el gustito de siempre</span>
       </div>
       <div class="menu-grid">
         <div class="dish-card">
           <div class="dish-top"><h3>Clásica</h3><span class="price">S/ 10</span></div>
           <p>Papas fritas, salchicha y tus cremas favoritas.</p>
+          <button type="button" class="btn-add" data-name="Salchipapa clásica" data-price="10" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Con huevo y queso</h3><span class="price">S/ 13</span></div>
           <p>Huevo frito, queso derretido y salchicha.</p>
+          <button type="button" class="btn-add" data-name="Salchipapa con huevo y queso" data-price="13" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <span class="badge-featured">Especial</span>
           <div class="dish-top"><h3>Salchipapa broaster</h3><span class="price">S/ 16</span></div>
           <p>Con trocitos de nuestro pollo broaster encima.</p>
+          <button type="button" class="btn-add" data-name="Salchipapa broaster" data-price="16" data-cat="grasa">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Personal</h3><span class="price">S/ 8</span></div>
           <p>Porción individual, ideal para llevar al toque.</p>
+          <button type="button" class="btn-add" data-name="Salchipapa personal" data-price="8" data-cat="grasa">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -781,25 +763,29 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🥗 Vegetariano</h2>
+        <h2>Vegetariano</h2>
         <span class="section-note">con la misma sazón</span>
       </div>
       <div class="menu-grid">
         <div class="dish-card">
           <div class="dish-top"><h3>Hamburguesa de lentejas</h3><span class="price">S/ 14</span></div>
           <p>Con palta, tomate y pan integral.</p>
+          <button type="button" class="btn-add" data-name="Hamburguesa de lentejas" data-price="14" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Wrap de vegetales y palta</h3><span class="price">S/ 13</span></div>
           <p>Tortilla integral rellena de vegetales salteados.</p>
+          <button type="button" class="btn-add" data-name="Wrap de vegetales y palta" data-price="13" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Ensalada César sin pollo</h3><span class="price">S/ 12</span></div>
           <p>Con crotones caseros y aderezo ligero.</p>
+          <button type="button" class="btn-add" data-name="Ensalada César sin pollo" data-price="12" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Anticuchos de champiñón</h3><span class="price">S/ 12</span></div>
           <p>Marinados y a la parrilla, con papa dorada.</p>
+          <button type="button" class="btn-add" data-name="Anticuchos de champiñón" data-price="12" data-cat="fit">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -819,7 +805,7 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>💪 Fitness</h2>
+        <h2>Fitness</h2>
         <span class="section-note">rico y liviano sí se puede</span>
       </div>
       <div class="menu-grid">
@@ -827,18 +813,22 @@
           <span class="badge-featured">Favorito fit</span>
           <div class="dish-top"><h3>Bowl de pollo y quinua</h3><span class="price">S/ 18</span></div>
           <p>Pollo a la plancha, quinua, palta y vegetales frescos.</p>
+          <button type="button" class="btn-add" data-name="Bowl de pollo y quinua" data-price="18" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Ensalada fitness</h3><span class="price">S/ 16</span></div>
           <p>Pollo, palta, mix de hojas y semillas.</p>
+          <button type="button" class="btn-add" data-name="Ensalada fitness" data-price="16" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Wrap fit de pollo</h3><span class="price">S/ 15</span></div>
           <p>Tortilla integral, pollo y vegetales al wok.</p>
+          <button type="button" class="btn-add" data-name="Wrap fit de pollo" data-price="15" data-cat="fit">+ Agregar</button>
         </div>
         <div class="dish-card">
           <div class="dish-top"><h3>Tortilla de claras</h3><span class="price">S/ 14</span></div>
           <p>Con espinaca, champiñones y queso fresco.</p>
+          <button type="button" class="btn-add" data-name="Tortilla de claras" data-price="14" data-cat="fit">+ Agregar</button>
         </div>
       </div>
     </div>
@@ -858,35 +848,35 @@
     </div>
     <div class="wrap">
       <div class="section-head">
-        <h2>🥤 Para acompañar</h2>
+        <h2>Para acompañar</h2>
         <span class="section-note">jugos, gaseosas e infusiones</span>
       </div>
       <div class="drinks-groups">
         <div>
           <h4>Jugos naturales</h4>
           <ul>
-            <li><span>Papaya</span><span>S/ 6</span></li>
-            <li><span>Piña</span><span>S/ 6</span></li>
-            <li><span>Maracuyá</span><span>S/ 7</span></li>
-            <li><span>Fresa con leche</span><span>S/ 8</span></li>
-            <li><span>Combinado (a elección)</span><span>S/ 8</span></li>
+            <li><span>Papaya</span><span class="drink-line"><span class="price">S/ 6</span><button type="button" class="btn-add-mini" data-name="Jugo de papaya" data-price="6" data-cat="neutral" aria-label="Agregar jugo de papaya">+</button></span></li>
+            <li><span>Piña</span><span class="drink-line"><span class="price">S/ 6</span><button type="button" class="btn-add-mini" data-name="Jugo de piña" data-price="6" data-cat="neutral" aria-label="Agregar jugo de piña">+</button></span></li>
+            <li><span>Maracuyá</span><span class="drink-line"><span class="price">S/ 7</span><button type="button" class="btn-add-mini" data-name="Jugo de maracuyá" data-price="7" data-cat="neutral" aria-label="Agregar jugo de maracuyá">+</button></span></li>
+            <li><span>Fresa con leche</span><span class="drink-line"><span class="price">S/ 8</span><button type="button" class="btn-add-mini" data-name="Jugo de fresa con leche" data-price="8" data-cat="neutral" aria-label="Agregar jugo de fresa con leche">+</button></span></li>
+            <li><span>Combinado (a elección)</span><span class="drink-line"><span class="price">S/ 8</span><button type="button" class="btn-add-mini" data-name="Jugo combinado" data-price="8" data-cat="neutral" aria-label="Agregar jugo combinado">+</button></span></li>
           </ul>
         </div>
         <div>
           <h4>Gaseosas</h4>
           <ul>
-            <li><span>Personal</span><span>S/ 4</span></li>
-            <li><span>Litro</span><span>S/ 8</span></li>
-            <li><span>Litro y medio</span><span>S/ 10</span></li>
+            <li><span>Personal</span><span class="drink-line"><span class="price">S/ 4</span><button type="button" class="btn-add-mini" data-name="Gaseosa personal" data-price="4" data-cat="neutral" aria-label="Agregar gaseosa personal">+</button></span></li>
+            <li><span>Litro</span><span class="drink-line"><span class="price">S/ 8</span><button type="button" class="btn-add-mini" data-name="Gaseosa litro" data-price="8" data-cat="neutral" aria-label="Agregar gaseosa litro">+</button></span></li>
+            <li><span>Litro y medio</span><span class="drink-line"><span class="price">S/ 10</span><button type="button" class="btn-add-mini" data-name="Gaseosa litro y medio" data-price="10" data-cat="neutral" aria-label="Agregar gaseosa litro y medio">+</button></span></li>
           </ul>
         </div>
         <div>
           <h4>Infusiones y agua</h4>
           <ul>
-            <li><span>Manzanilla</span><span>S/ 4</span></li>
-            <li><span>Anís</span><span>S/ 4</span></li>
-            <li><span>Hierbaluisa</span><span>S/ 4</span></li>
-            <li><span>Agua sin/con gas</span><span>S/ 3</span></li>
+            <li><span>Manzanilla</span><span class="drink-line"><span class="price">S/ 4</span><button type="button" class="btn-add-mini" data-name="Manzanilla" data-price="4" data-cat="neutral" aria-label="Agregar manzanilla">+</button></span></li>
+            <li><span>Anís</span><span class="drink-line"><span class="price">S/ 4</span><button type="button" class="btn-add-mini" data-name="Anís" data-price="4" data-cat="neutral" aria-label="Agregar anís">+</button></span></li>
+            <li><span>Hierbaluisa</span><span class="drink-line"><span class="price">S/ 4</span><button type="button" class="btn-add-mini" data-name="Hierbaluisa" data-price="4" data-cat="neutral" aria-label="Agregar hierbaluisa">+</button></span></li>
+            <li><span>Agua sin/con gas</span><span class="drink-line"><span class="price">S/ 3</span><button type="button" class="btn-add-mini" data-name="Agua" data-price="3" data-cat="neutral" aria-label="Agregar agua">+</button></span></li>
           </ul>
         </div>
       </div>
@@ -903,12 +893,12 @@
         <div class="step">
           <span class="step-num">01</span>
           <h3>Elige tu gustito</h3>
-          <p>Revisa la carta y decide si hoy toca modo clásico o modo fit.</p>
+          <p>Agrega tus platos con el botón "Agregar" y arma tu ticket.</p>
         </div>
         <div class="step">
           <span class="step-num">02</span>
-          <h3>Escríbenos</h3>
-          <p>Mándanos tu pedido por WhatsApp con tu dirección o si pasas a recoger.</p>
+          <h3>Envíanos el ticket</h3>
+          <p>Cuando termines, manda tu pedido por WhatsApp desde el mismo ticket.</p>
         </div>
         <div class="step">
           <span class="step-num">03</span>
@@ -924,7 +914,10 @@
     <div class="wrap">
       <h2>¿Ya se te antojó algo?</h2>
       <p>Escríbenos y coordinamos tu pedido en minutos. Delivery y recojo en tienda disponibles.</p>
-      <a href="https://wa.me/51903202245" class="btn btn-primary" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+      <a href="https://wa.me/51903202245" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg class="icon-chat" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        Escribir por WhatsApp
+      </a>
       <button type="button" class="link-reclamos" id="openReclamos">Libro de Reclamaciones</button>
     </div>
   </section>
@@ -955,57 +948,95 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Un Gustito. Todos los derechos reservados.</span>
-      <span>Hecho con gustito 🧡💚</span>
+      <span>Hecho con dedicación, en casa.</span>
     </div>
   </div>
 </footer>
 
+<!-- Ticket flotante -->
+<button type="button" class="ticket-toggle" id="ticketToggle" aria-label="Ver mi ticket">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13a1 1 0 0 1-1.45.9L17 20l-2.5.9L12 20l-2.5.9L7 20l-2.55.9A1 1 0 0 1 3 20V7z"/><path d="M3 7l2-3h14l2 3"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
+  <span class="ticket-count" id="ticketCount" hidden>0</span>
+</button>
+
+<div class="ticket-panel" id="ticketPanel" hidden>
+  <div class="ticket-panel-head">
+    <h3>Tu ticket</h3>
+    <button type="button" class="ticket-close" id="ticketClose" aria-label="Cerrar">✕</button>
+  </div>
+  <ul class="ticket-list" id="ticketList"></ul>
+  <p class="ticket-empty" id="ticketEmpty">Aún no agregaste nada. Toca "Agregar" en un plato del menú.</p>
+  <div class="ticket-footer">
+    <span>Total</span>
+    <span class="ticket-total" id="ticketTotal">S/ 0</span>
+  </div>
+  <button type="button" class="btn btn-primary ticket-send" id="ticketSend">Enviar pedido por WhatsApp</button>
+  <button type="button" class="ticket-clear" id="ticketClear">Vaciar ticket</button>
+</div>
+
+<!-- Modal Libro de Reclamaciones -->
 <div class="modal-overlay" id="reclamosModal">
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="reclamosTitle">
     <button type="button" class="modal-close" id="closeReclamos" aria-label="Cerrar">✕</button>
-    <h3 id="reclamosTitle">Libro de Reclamaciones</h3>
-    <p class="modal-sub">Cuéntanos qué pasó. Tus datos de contacto son opcionales, pero nos ayudan a responderte. Al enviar, se abrirá WhatsApp con tu reclamo redactado para que lo confirmes y lo mandes directamente al negocio.</p>
-    <form id="reclamoForm">
-      <div class="form-row">
-        <label for="tipoReclamo">Tipo de solicitud</label>
-        <select id="tipoReclamo" name="tipo">
-          <option value="Reclamo">Reclamo</option>
-          <option value="Queja">Queja</option>
-        </select>
-      </div>
-      <div class="form-grid-2">
+
+    <div id="reclamoFormView">
+      <h3 id="reclamosTitle">Libro de Reclamaciones</h3>
+      <p class="modal-sub">Cuéntanos qué pasó. Los datos de contacto son opcionales; ten en cuenta que al enviarlo por WhatsApp desde tu celular, tu número quedará visible para el negocio.</p>
+      <form id="reclamoForm">
         <div class="form-row">
-          <label for="nombreReclamo">Nombre <span class="opt">(opcional)</span></label>
-          <input type="text" id="nombreReclamo" name="nombre" placeholder="Tu nombre">
+          <label for="tipoReclamo">Tipo de solicitud</label>
+          <select id="tipoReclamo" name="tipo">
+            <option value="Reclamo">Reclamo</option>
+            <option value="Queja">Queja</option>
+          </select>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="nombreReclamo">Nombre <span class="opt">(opcional)</span></label>
+            <input type="text" id="nombreReclamo" name="nombre" placeholder="Tu nombre">
+          </div>
+          <div class="form-row">
+            <label for="documentoReclamo">DNI / CE <span class="opt">(opcional)</span></label>
+            <input type="text" id="documentoReclamo" name="documento" placeholder="Documento">
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="correoReclamo">Correo <span class="opt">(opcional)</span></label>
+            <input type="email" id="correoReclamo" name="correo" placeholder="tucorreo@ejemplo.com">
+          </div>
+          <div class="form-row">
+            <label for="telefonoReclamo">Teléfono <span class="opt">(opcional)</span></label>
+            <input type="tel" id="telefonoReclamo" name="telefono" placeholder="999 999 999">
+          </div>
         </div>
         <div class="form-row">
-          <label for="documentoReclamo">DNI / CE <span class="opt">(opcional)</span></label>
-          <input type="text" id="documentoReclamo" name="documento" placeholder="Documento">
+          <label for="detalleReclamo">Detalle del reclamo o queja</label>
+          <textarea id="detalleReclamo" name="detalle" placeholder="Cuéntanos qué ocurrió, cuándo y en qué pedido" required></textarea>
         </div>
-      </div>
-      <div class="form-grid-2">
-        <div class="form-row">
-          <label for="correoReclamo">Correo <span class="opt">(opcional)</span></label>
-          <input type="email" id="correoReclamo" name="correo" placeholder="tucorreo@ejemplo.com">
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Enviar reclamo</button>
         </div>
-        <div class="form-row">
-          <label for="telefonoReclamo">Teléfono <span class="opt">(opcional)</span></label>
-          <input type="tel" id="telefonoReclamo" name="telefono" placeholder="999 999 999">
-        </div>
+        <p class="form-hint">Al enviar, se abrirá WhatsApp con tu reclamo ya redactado para que lo confirmes y nos lo mandes.</p>
+      </form>
+    </div>
+
+    <div id="reclamoSuccessView" class="reclamo-success">
+      <div class="face">
+        <span class="eye left"></span>
+        <span class="eye right"></span>
+        <span class="mouth"></span>
+        <span class="tear left"></span>
+        <span class="tear right"></span>
+        <span class="hand"></span>
       </div>
-      <div class="form-row">
-        <label for="detalleReclamo">Detalle del reclamo o queja</label>
-        <textarea id="detalleReclamo" name="detalle" placeholder="Cuéntanos qué ocurrió, cuándo y en qué pedido" required></textarea>
-      </div>
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
-      </div>
-      <p class="form-hint">Este envío no guarda tus datos en la página; solo prepara el mensaje para que lo mandes por WhatsApp.</p>
-    </form>
+      <h4>¡Reclamo enviado con éxito!</h4>
+      <p>Gracias por contarnos. Lo revisaremos a la brevedad.</p>
+      <button type="button" class="btn btn-ghost" id="reclamoSuccessClose" style="margin-top:16px;">Cerrar</button>
+    </div>
   </div>
 </div>
 
-<a href="https://wa.me/51903202245" class="float-whats" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">💬</a>
 
 <script>
   // Menú móvil
@@ -1016,14 +1047,13 @@
     navToggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Dial Clásico / Fit — elemento distintivo
+  // Dial Clásico / Fit
   const dial = document.getElementById('modeDial');
   const sections = document.querySelectorAll('.menu-section[data-mode]');
   const tagClasico = document.getElementById('tag-clasico');
   const tagFit = document.getElementById('tag-fit');
   const eyebrow = document.getElementById('eyebrowText');
   const accentWord = document.getElementById('accentWord');
-
   const sceneItems = document.querySelectorAll('[data-scene]');
 
   function setMode(mode){
@@ -1061,13 +1091,144 @@
 
   setMode('clasico');
 
-  // Libro de Reclamaciones
+  // ---------- Ticket (carrito con animación) ----------
+  const ticketToggle = document.getElementById('ticketToggle');
+  const ticketPanel = document.getElementById('ticketPanel');
+  const ticketClose = document.getElementById('ticketClose');
+  const ticketList = document.getElementById('ticketList');
+  const ticketEmpty = document.getElementById('ticketEmpty');
+  const ticketTotal = document.getElementById('ticketTotal');
+  const ticketCount = document.getElementById('ticketCount');
+  const ticketSend = document.getElementById('ticketSend');
+  const ticketClear = document.getElementById('ticketClear');
+
+  let cart = [];
+
+  function initials(name){
+    return name
+      .split(' ')
+      .filter(w => w.length > 2)
+      .slice(0, 2)
+      .map(w => w[0].toUpperCase())
+      .join('') || name.slice(0,2).toUpperCase();
+  }
+
+  function renderTicket(){
+    ticketList.innerHTML = '';
+    let total = 0;
+    let count = 0;
+    cart.forEach(item => {
+      total += item.price * item.qty;
+      count += item.qty;
+      const li = document.createElement('li');
+      li.className = 'ticket-item cat-' + item.cat;
+      li.innerHTML = `<span>${item.qty}x ${item.name}</span><span>S/ ${item.price * item.qty}</span>`;
+      ticketList.appendChild(li);
+    });
+    ticketTotal.textContent = 'S/ ' + total;
+    ticketEmpty.style.display = cart.length ? 'none' : 'block';
+    if (count > 0){
+      ticketCount.hidden = false;
+      ticketCount.textContent = count;
+    } else {
+      ticketCount.hidden = true;
+    }
+  }
+
+  function addToCart(name, price, cat){
+    const existing = cart.find(i => i.name === name);
+    if (existing){ existing.qty += 1; }
+    else { cart.push({ name, price, cat, qty: 1 }); }
+    renderTicket();
+  }
+
+  function bounceTicket(){
+    ticketToggle.classList.remove('bounce');
+    void ticketToggle.offsetWidth;
+    ticketToggle.classList.add('bounce');
+  }
+
+  function spawnRunner(btn, name, price, cat){
+    const startRect = btn.getBoundingClientRect();
+    const endRect = ticketToggle.getBoundingClientRect();
+
+    const runner = document.createElement('div');
+    runner.className = 'runner cat-' + cat;
+    runner.textContent = initials(name);
+    runner.style.left = (startRect.left + startRect.width / 2 - 22) + 'px';
+    runner.style.top = (startRect.top + startRect.height / 2 - 22) + 'px';
+    document.body.appendChild(runner);
+
+    requestAnimationFrame(() => {
+      runner.style.left = (endRect.left + endRect.width / 2 - 22) + 'px';
+      runner.style.top = (endRect.top + endRect.height / 2 - 22) + 'px';
+      runner.style.transform = 'scale(0.35)';
+    });
+
+    runner.addEventListener('transitionend', () => {
+      runner.remove();
+      bounceTicket();
+      addToCart(name, price, cat);
+    }, { once: true });
+  }
+
+  document.querySelectorAll('.btn-add, .btn-add-mini').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const price = parseFloat(btn.dataset.price);
+      const cat = btn.dataset.cat;
+      spawnRunner(btn, name, price, cat);
+    });
+  });
+
+  ticketToggle.addEventListener('click', () => {
+    ticketPanel.hidden = !ticketPanel.hidden;
+  });
+  ticketClose.addEventListener('click', () => { ticketPanel.hidden = true; });
+
+  ticketClear.addEventListener('click', () => {
+    cart = [];
+    renderTicket();
+  });
+
+  ticketSend.addEventListener('click', () => {
+    if (!cart.length){ return; }
+    let total = 0;
+    const lineas = cart.map(item => {
+      total += item.price * item.qty;
+      return `${item.qty}x ${item.name} - S/ ${item.price * item.qty}`;
+    }).join('\n');
+    const mensaje = `PEDIDO - Un Gustito\n\n${lineas}\n\nTotal: S/ ${total}`;
+    const url = 'https://wa.me/51903202245?text=' + encodeURIComponent(mensaje);
+    window.open(url, '_blank');
+  });
+
+  renderTicket();
+
+  // ---------- Libro de Reclamaciones ----------
+  // Configura estos dos valores en callmebot.com para que el reclamo
+  // llegue directo a tu WhatsApp sin que el cliente tenga que abrir nada.
+  const RECLAMOS_WHATSAPP_PHONE = '51903202245';
+  const CALLMEBOT_APIKEY = 'PON_AQUI_TU_APIKEY';
+
+  function enviarReclamoSilencioso(mensaje){
+    if (!CALLMEBOT_APIKEY || CALLMEBOT_APIKEY === 'PON_AQUI_TU_APIKEY') return;
+    const url = 'https://api.callmebot.com/whatsapp.php?phone=' + RECLAMOS_WHATSAPP_PHONE +
+      '&text=' + encodeURIComponent(mensaje) + '&apikey=' + CALLMEBOT_APIKEY;
+    fetch(url, { mode: 'no-cors' }).catch(() => {});
+  }
+
   const reclamosModal = document.getElementById('reclamosModal');
   const openReclamos = document.getElementById('openReclamos');
   const closeReclamos = document.getElementById('closeReclamos');
   const reclamoForm = document.getElementById('reclamoForm');
+  const reclamoFormView = document.getElementById('reclamoFormView');
+  const reclamoSuccessView = document.getElementById('reclamoSuccessView');
+  const reclamoSuccessClose = document.getElementById('reclamoSuccessClose');
 
   function openModal(){
+    reclamoFormView.style.display = 'block';
+    reclamoSuccessView.classList.remove('is-active');
     reclamosModal.classList.add('is-open');
     document.getElementById('detalleReclamo').focus();
   }
@@ -1077,6 +1238,7 @@
 
   openReclamos.addEventListener('click', openModal);
   closeReclamos.addEventListener('click', closeModal);
+  reclamoSuccessClose.addEventListener('click', closeModal);
   reclamosModal.addEventListener('click', (e) => {
     if (e.target === reclamosModal) closeModal();
   });
@@ -1088,7 +1250,7 @@
     e.preventDefault();
     const data = new FormData(reclamoForm);
     const tipo = data.get('tipo');
-    const nombre = (data.get('nombre') || '').trim() || 'No indicado';
+    const nombre = (data.get('nombre') || '').trim() || 'No indicado (anónimo)';
     const documento = (data.get('documento') || '').trim() || 'No indicado';
     const correo = (data.get('correo') || '').trim() || 'No indicado';
     const telefono = (data.get('telefono') || '').trim() || 'No indicado';
@@ -1099,11 +1261,19 @@
       return;
     }
 
-    const mensaje = `📋 LIBRO DE RECLAMACIONES - Un Gustito\n\nTipo: ${tipo}\nNombre: ${nombre}\nDocumento: ${documento}\nCorreo: ${correo}\nTeléfono: ${telefono}\n\nDetalle:\n${detalle}`;
-    const url = 'https://wa.me/51903202245?text=' + encodeURIComponent(mensaje);
-    window.open(url, '_blank');
+    const mensaje = 'LIBRO DE RECLAMACIONES - Un Gustito\n\nTipo: ' + tipo +
+      '\nNombre: ' + nombre + '\nDocumento: ' + documento +
+      '\nCorreo: ' + correo + '\nTeléfono: ' + telefono +
+      '\n\nDetalle:\n' + detalle;
+
+    enviarReclamoSilencioso(mensaje);
+
+    const urlWhats = 'https://wa.me/' + RECLAMOS_WHATSAPP_PHONE + '?text=' + encodeURIComponent(mensaje);
+    window.open(urlWhats, '_blank');
+
+    reclamoFormView.style.display = 'none';
+    reclamoSuccessView.classList.add('is-active');
     reclamoForm.reset();
-    closeModal();
   });
 </script>
 
